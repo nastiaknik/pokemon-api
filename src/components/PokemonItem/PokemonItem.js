@@ -11,7 +11,8 @@ export class PokemonItem extends Component {
       })
       .then(data => {
         this.setState({ pokemon: data });
-      });
+      })
+      .catch(error => console.log(error));
   }
 
   render() {
@@ -30,7 +31,7 @@ export class PokemonItem extends Component {
           />
         )}
         <p>{pokemon.name}</p>
-        {pokemon.stats && (
+        {/* {pokemon.stats && (
           <ul>
             {pokemon.stats.map(entry => (
               <li key={entry.stat.name}>
@@ -38,7 +39,7 @@ export class PokemonItem extends Component {
               </li>
             ))}
           </ul>
-        )}
+        )} */}
       </StyledPokemonItem>
     );
   }
